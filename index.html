@@ -67,22 +67,44 @@
             <p class="container__text">Регистрация</p>
         </div>
         <div class="container__content">
-            <input class="content__input" type="text" placeholder="Имя">
-            <input class="content__input" type="text" placeholder="Фамилия">
-            <input class="content__input" type="email" placeholder="E-mail">
-            <input class="content__input" type="password" placeholder="Пароль">
-            <input class="content__input" type="password" placeholder="Подтвердите пароль">
+            <input class="content__input" type="text" placeholder="Имя" id="name" oninput="if(/[^а-яА-Я]/.test(this.value)){let Selection = this.selectionStart-1;
+                    this.value=this.value.replace(/[^а-яА-Я]/g,'');this.setSelectionRange(Selection, Selection);}">
+            <input class="content__input" type="text" placeholder="Фамилия" id="surname" oninput="if(/[^а-яА-Я]/.test(this.value)){let Selection = this.selectionStart-1;
+                this.value=this.value.replace(/[^а-яА-Я]/g,'');this.setSelectionRange(Selection, Selection);}">
+            <input class="content__input" type="email" placeholder="E-mail" onblur="validateEmail(this.value);">
+            <input class="content__input" type="password" id="password" placeholder="Пароль">
+            <input class="content__input" type="password" id="password_replay" placeholder="Подтвердите пароль">
         </div>
         <div class="container__button">
-            <button class="container__button1">
+            <button class="container__button1" onclick="checkPassword()">
                 <p class="container__text_button">Регистрация</p>
             </button>
-            <button class="container__button2">
-                <p class="container__text_button">Продолжить с Google</p>
-            </button>
         </div>
+        <script>
+            function validateEmail(sEmail) {
+                var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
+
+                if (!sEmail.match(reEmail)) {
+                    alert("Адрес электронной почты введен не верно!");
+                    return false;
+                }
+                return true;
+            }
+
+            function checkPassword() {
+                let password = document.getElementById('password').value;
+                let password_replay = document.getElementById('password_replay').value;
+                let name = document.getElementById('name').value;
+                let surname = document.getElementById('surname').value;
+
+                if (password === password_replay) {
+                    alert('Добро пожаловать, ' + name + ' ' + surname + '!');
+                } else { alert('Пароль не совпадает!'); }
+            }
+        </script>
 
     </div>
+
 
 
     <!-- <div id="container">
@@ -95,7 +117,7 @@
 
         // сделать его фон красным
         elem.style.background = 'red';
-    </script> -->
+    </scrip> -->
     <!-- <form name="search">
         <div id="container">
             <ul class="content">
@@ -113,7 +135,7 @@
         let elements = document.getElementsByName('search');
         console.log(elements);
 
-    </script> -->
+    </> -->
 </body>
 
 </html>
