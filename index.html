@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- задание 1 -->
+    <h2>Задание 1. Калькулятор</h2>
+    <p>Введите два значения</p>
+    <input id="num1">
+    <input id="num2">
+    <p>Выберите действие</p>
+    <button onclick="sum()">+</button>
+    <script>
+        function sum() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let result = num1 - (-num2);
+            document.getElementById('answer').value = result;
+        }
+    </script>
+    <button onclick="minus()">-</button>
+    <script>
+        function minus() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let result = num1 - num2;
+            document.getElementById('answer').value = result;
+        }
+    </script>
+    <button onclick="times()">:</button>
+    <script>
+        function times() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            if (num1 == 0 || num2 == 0) {
+                alert('На ноль делить нельзя!');
+            }
+            let result = num1 / num2;
+            document.getElementById('answer').value = result;
+        }
+    </script>
+    <button onclick="divide()">*</button>
+    <script>
+        function divide() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            let result = num1 * num2;
+            document.getElementById('answer').value = result;
+        }
+    </script>
+    <p>Ответ: </p>
+    <input id="answer">
+
+    <!-- задание 2 -->
+    <h2>Задание 2. Форма регистрации</h2>
+    <div class="container">
+        <div class="container__title">
+            <p class="container__text">Вход</p>
+            <p class="container__text">Регистрация</p>
+        </div>
+        <div class="container__content">
+            <input class="content__input" type="text" placeholder="Имя">
+            <input class="content__input" type="text" placeholder="Фамилия">
+            <input class="content__input" type="email" placeholder="E-mail">
+            <input class="content__input" type="password" placeholder="Пароль">
+            <input class="content__input" type="password" placeholder="Подтвердите пароль">
+        </div>
+        <div class="container__button">
+            <button class="container__button1">
+                <p class="container__text_button">Регистрация</p>
+            </button>
+            <button class="container__button2">
+                <p class="container__text_button">Продолжить с Google</p>
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- <div id="container">
+        <div class="container-content">Element</div>
+    </div>
+
+    <script>
+        // получить элемент
+        let elem = document.getElementById('container');
+
+        // сделать его фон красным
+        elem.style.background = 'red';
+    </script> -->
+    <!-- <form name="search">
+        <div id="container">
+            <ul class="content">
+                <li class="content__item">Этот</li>
+                <li class="content__item">тест</li>
+            </ul>
+            <ul class="content">
+                <li class="content__item">полностью</li>
+                <li class="content__item">пройден</li>
+            </ul>
+        </div>
+    </form>
+
+    <script>
+        let elements = document.getElementsByName('search');
+        console.log(elements);
+
+    </script> -->
+</body>
+
+</html>
