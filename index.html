@@ -102,8 +102,32 @@
                 } else { alert('Пароль не совпадает!'); }
             }
         </script>
-
     </div>
+
+    <!-- задание 3 -->
+    <div id="changeFon">
+        <h2>Задание 3. Выбор темы</h2>
+        <select name="breed" id="breed" onchange="changeFon()">
+            <option disabled selected="selected">Выберите тему</option>
+            <option value="pink">Розовая</option>
+            <option value="green">Зеленая</option>
+            <option value="purple">Фиолетовая</option>
+            <option value="blue">Голубая</option>
+            <option value="yellow">Желтая</option>
+        </select>
+    </div>
+
+    <script>
+        function changeFon() {
+            switch (document.getElementById("breed").value) {
+                case "pink": document.getElementById("changeFon").style.backgroundColor = "pink"; break;
+                case "green": document.getElementById("changeFon").style.backgroundColor = "green"; break;
+                case "purple": document.getElementById("changeFon").style.backgroundColor = "purple"; break;
+                case "blue": document.getElementById("changeFon").style.backgroundColor = "blue"; break;
+                case "yellow": document.getElementById("changeFon").style.backgroundColor = "yellow"; break;
+            }
+        } 
+    </script>
 
 
 
