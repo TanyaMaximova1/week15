@@ -96,10 +96,19 @@
                 let password_replay = document.getElementById('password_replay').value;
                 let name = document.getElementById('name').value;
                 let surname = document.getElementById('surname').value;
-
-                if (password === password_replay) {
+                if (name === "") {
+                    alert('Введите имя!');
+                }
+                if (surname === "") {
+                    alert('Введите фамилию!');
+                }
+                if (password === "") {
+                    alert('Введите пароль!');
+                }
+                if (password === password_replay & password != "") {
                     alert('Добро пожаловать, ' + name + ' ' + surname + '!');
-                } else { alert('Пароль не совпадает!'); }
+                }
+                else { alert('Пароль не совпадает!'); }
             }
         </script>
     </div>
