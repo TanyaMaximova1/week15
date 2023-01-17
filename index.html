@@ -129,7 +129,7 @@
         } 
     </script>
 
-    <!-- задание 3 -->
+    <!-- задание 4 -->
     <h2>Задание 4. Корзина покупок</h2>
     <h2>Корзина</h2>
     <div class="container__basket">
@@ -256,6 +256,22 @@
 
         </script>
     </div>
+
+    <!-- *** Задание под звездочкой -->
+    <h2>*** Задание под звездочкой</h2>
+    <input type="text" id="num_simple" oninput="if(/[^1-9]/.test(this.value)){let Selection = this.selectionStart-1;
+        this.value=this.value.replace(/[^1-9]/g,'');this.setSelectionRange(Selection, Selection);}">
+    <input type="text" id="num_answer">
+    <button onclick="square()">Ответ</button>
+    <script>
+        document.getElementById('num_answer').readOnly = true;
+
+        function square() {
+            let num = Number(document.getElementById('num_simple').value);
+            let result = num * num;
+            document.getElementById('num_answer').value = result;
+        }
+    </script>
 
 
 
