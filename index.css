@@ -8,6 +8,38 @@
     align-items: center;
 }
 
+.container__basket-card {
+    border: 1px solid rgb(0, 0, 0);
+    width: 700px;
+    height: 350px;
+    padding: 20px;
+    display: flex;
+}
+
+.container__basket-img {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.container__basket-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__basket_button {
+    height: 50px;
+    width: 350px;
+    margin-top: 15px;
+    background-color: black;
+    font-size: 1.2rem;
+    color: aliceblue;
+}
+
+.container__basket-price,
+.container__price {
+    font-size: 1.5rem;
+}
+
 .container__content {
     display: flex;
     flex-direction: column;

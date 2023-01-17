@@ -134,12 +134,127 @@
     <h2>Корзина</h2>
     <div class="container__basket">
         <div class="container__basket-card">
-            <img>
+            <img class="container__basket-img" src="image/go.jpg">
             <div class="container__basket-description">
-
+                <h2>Альбом GO Live</h2>
+                <p>Выпущен: 17 июня 2020</p>
+                <p>Студия: JUPE</p>
+                <p>Автор: Stray Kids</p>
+                <p class="container__basket-price">Цена в рублях:</p>
+                <p class="container__basket-price container__price" id="price1">1600</p>
             </div>
-            <p>Цена</p>
         </div>
+        <div class="container__basket-card">
+            <img class="container__basket-img" src="image/i_am_who.jpg">
+            <div class="container__basket-description">
+                <h2>Альбом i am Who</h2>
+                <p>Выпущен: 6 августа 2018</p>
+                <p>Студия: JUPE</p>
+                <p>Автор: Stray Kids</p>
+                <p class="container__basket-price">Цена в рублях:</p>
+                <p class="container__basket-price container__price" id="price2">1500</p>
+            </div>
+        </div>
+        <div class="container__basket-card">
+            <img class="container__basket-img" src="image/in_life.jpg">
+            <div class="container__basket-description">
+                <h2>Альбом in life</h2>
+                <p>Выпущен: 14 сентября 2020</p>
+                <p>Студия: JUPE</p>
+                <p>Автор: Stray Kids</p>
+                <p class="container__basket-price">Цена в рублях:</p>
+                <p class="container__basket-price container__price" id="price3">1400</p>
+            </div>
+        </div>
+        <div class="container__basket-card">
+            <img class="container__basket-img" src="image/miroh.png">
+            <div class="container__basket-description">
+                <h2>Альбом Miroh</h2>
+                <p>Выпущен: 25 марта 2019</p>
+                <p>Студия: JUPE</p>
+                <p>Автор: Stray Kids</p>
+                <p class="container__basket-price">Цена в рублях:</p>
+                <p class="container__basket-price container__price" id="price4" name="price">1550</p>
+            </div>
+        </div>
+        <div class="container__basket-card">
+            <img class="container__basket-img" src="image/noeasy.jpg">
+            <div class="container__basket-description">
+                <h2>Альбом Noeasy</h2>
+                <p>Выпущен: 3 августа 2021</p>
+                <p>Студия: JUPE</p>
+                <p>Автор: Stray Kids</p>
+                <p class="container__basket-price">Цена в рублях:</p>
+                <p class="container__basket-price container__price" id="price5" name="price">1600</p>
+            </div>
+        </div>
+        <button class="container__basket_button" onclick="reduction()">Применить скидку 20%</button>
+        <p class="container__basket-price">Итог: </p>
+        <p class="container__basket-price container__priceFinal" id="priceFinal"></p>
+        <script>
+
+            // let price = document.getElementsByName('price')[].textContent;
+            let price1_reduction;
+            let price2_reduction;
+            let price3_reduction;
+            let price4_reduction;
+            let price5_reduction;
+            let priceFinal;
+            priceFinal = Number(priceFinal);
+
+            price1_reduction = document.getElementById('price1').textContent;
+            price2_reduction = document.getElementById('price2').textContent;
+            price3_reduction = document.getElementById('price3').textContent;
+            price4_reduction = document.getElementById('price4').textContent;
+            price5_reduction = document.getElementById('price5').textContent;
+
+            priceFinal = document.getElementById('priceFinal');
+
+            price1_reduction = Number(price1_reduction);
+            price2_reduction = Number(price2_reduction);
+            price3_reduction = Number(price3_reduction);
+            price4_reduction = Number(price4_reduction);
+            price5_reduction = Number(price5_reduction);
+            priceFinalAll = price1_reduction + price2_reduction + price3_reduction + price4_reduction + price5_reduction;
+
+            // console.log(priceFinal.textContent); // "Это текст внутри элемента."
+            priceFinal.textContent = priceFinalAll; // можно перезаписать содержимое
+
+            function reduction() {
+                let reductionPrice;
+                reductionPrice = Number(reductionPrice);
+                reductionPrice = (priceFinalAll - (priceFinalAll * 0.2));
+                console.log(reductionPrice); // "Это текст внутри элемента."
+                priceFinal.textContent = reductionPrice;
+
+                let price1_end;
+                price1_end = Number(price1_reduction);
+                price1_end = (price1_reduction - (price1_reduction * 0.2));
+                price1.textContent = price1_end; // можно перезаписать содержимое
+
+                let price2_end;
+                price2_end = Number(price2_reduction);
+                price2_end = (price2_reduction - (price2_reduction * 0.2));
+                price2.textContent = price2_end; // можно перезаписать содержимое
+
+                let price3_end;
+                price3_end = Number(price3_reduction);
+                price3_end = (price3_reduction - (price3_reduction * 0.2));
+                price3.textContent = price3_end; // можно перезаписать содержимое
+
+                let price4_end;
+                price4_end = Number(price4_reduction);
+                price4_end = (price4_reduction - (price4_reduction * 0.2));
+                price4.textContent = price4_end; // можно перезаписать содержимое
+
+                let price5_end;
+                price5_end = Number(price5_reduction);
+                price5_end = (price5_reduction - (price5_reduction * 0.2));
+                price5.textContent = price5_end; // можно перезаписать содержимое
+
+            }
+
+        </script>
     </div>
 
 
